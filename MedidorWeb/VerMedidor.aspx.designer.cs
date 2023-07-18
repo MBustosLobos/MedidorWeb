@@ -24,12 +24,12 @@ namespace MedidorWeb
         protected global::System.Web.UI.WebControls.DropDownList tipoMedidorDDL;
 
         /// <summary>
-        /// Control grillaAsistente.
+        /// Control grillaUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grillaAsistente;
+        protected global::System.Web.UI.WebControls.GridView grillaUsuario;
     }
 }

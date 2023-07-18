@@ -9,9 +9,9 @@
         </div>
     </div>
     <div class="row mt-5">
-        <asp:GridView ID="grillaAsistente" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true" 
+        <asp:GridView ID="grillaUsuario" AutoGenerateColumns="false" ShowHeaderWhenEmpty="true" 
             CssClass="table table-hover table-bordered"
-          
+            OnRowCommand="grillaUsuario_RowCommand"
             EmptyDataText="No hay Registros" runat="server">
 
             <Columns>
@@ -23,6 +23,13 @@
                  <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                  <asp:BoundField HeaderText="Estado" DataField="Estado" />
                  
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button CommandName="elimina" CommandArgument='<%# Eval("Id") %>' 
+                            runat="server" CssClass="btn btn-danger" Text="Eliminar" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                
             </Columns>
 
         </asp:GridView>

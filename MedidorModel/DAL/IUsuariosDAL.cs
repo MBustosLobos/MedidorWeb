@@ -16,6 +16,6 @@ namespace MedidorModel.DAL
 
         void AgregarUsuario(Usuario usuario);
 
-        
+        void EliminarUsuario(int id);
     }
 }

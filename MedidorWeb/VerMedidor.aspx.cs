@@ -15,8 +15,8 @@ namespace MedidorWeb
 
         private void cargaGrilla(List<Usuario> usuario)
         {
-            this.grillaAsistente.DataSource = usuario;
-            this.grillaAsistente.DataBind();
+            this.grillaUsuario.DataSource = usuario;
+            this.grillaUsuario.DataBind();
         }
 
 
@@ -34,6 +34,19 @@ namespace MedidorWeb
             string estado = this.tipoMedidorDDL.SelectedValue;
             List<Usuario> usuario = this.usuariosDAL.ObtenerUsuarios(estado);
             this.cargaGrilla(usuario);
+
+        }
+        protected void grillaUsuario_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "elimina")
+            {
+                //significa que el usuario apreto boton
+                //por lo tanto, eliminar el cliente
+
+                 int id = Convert.ToInt32(e.CommandArgument);
+                usuariosDAL.EliminarUsuario(id);
+                this.cargaGrilla(this.usuariosDAL.ObtenerUsuarios());
+            }
 
         }
     }
